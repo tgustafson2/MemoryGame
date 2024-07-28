@@ -66,3 +66,22 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.card{
+  width: 180px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.card-front{
+  background-color: rgba(0,0,0,0.2);
+}
+.card-front img{
+  height: 80%;
+  width: 100%;
+}
+.pokemonName{
+  font-family: 'Pokemon Solid', sans-serif;
+  text-align: center;
+
+}

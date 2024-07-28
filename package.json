@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-card-flip": "^1.2.3",
+    "react-dom": "^18.3.1",
+    "react-parallax-tilt": "^1.7.234"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
