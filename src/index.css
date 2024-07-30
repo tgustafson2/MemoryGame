@@ -53,6 +53,36 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.card {
+  width: 180px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.card-front {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.card-front img {
+  height: 80%;
+  width: 100%;
+}
+.pokemonName {
+  font-family: "Pokemon Solid", sans-serif;
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 180px;
+  grid-template-rows: 250px 250px;
+  grid-auto-rows: 250px;
+  grid-auto-columns: 180px;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+.game-container {
+  width: 100vw;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -65,23 +95,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-.card{
-  width: 180px;
-  height: 250px;
-  border-radius: 5px;
-}
-
-.card-front{
-  background-color: rgba(0,0,0,0.2);
-}
-.card-front img{
-  height: 80%;
-  width: 100%;
-}
-.pokemonName{
-  font-family: 'Pokemon Solid', sans-serif;
-  text-align: center;
-
 }

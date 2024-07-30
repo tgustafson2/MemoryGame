@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import  Tilt  from "react-parallax-tilt";
 import cardback from "../../public/card-back.png";
+import "../index.css";
 
 function Card({ pokemonName, pokemonImageUrl, handleClick }) {
   const [flipped, setFlipped] = useState(true);
@@ -12,21 +13,21 @@ function Card({ pokemonName, pokemonImageUrl, handleClick }) {
   }, []);
 
   return (
-    <div style={{position:"absolute"}}>
-      <ReactCardFlip isFlipped={flipped}>
+    <div className="card">
+      <ReactCardFlip isFlipped={flipped} cardStyles={{position:"relative"}}>
         <Tilt
           glareEnable={true}
           glareMaxOpacity={0.4}
           glareColor={"#fff"}
           glarePosition={"all"}
         >
-          <div className="card card-front" onClick={()=>handleClick()} >
+          <div className="card-front" onClick={()=>handleClick(pokemonName)} >
             <img src={pokemonImageUrl}></img>
             <p className="pokemonName">{pokemonName}</p>
           </div>
         </Tilt>
         <div
-          className="card card-back"
+          className="card-back"
         >
             <img src={cardback} />
         </div>
