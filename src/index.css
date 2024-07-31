@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url("/landscape.png");
+  background-size: cover;
 }
 
 h1 {
@@ -73,15 +75,30 @@ button:focus-visible {
 
 .card-container {
   display: grid;
-  grid-template-columns: 180px;
-  grid-template-rows: 250px 250px;
-  grid-auto-rows: 250px;
-  grid-auto-columns: 180px;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, 180px);
+  grid-template-rows: repeat(auto-fit, 250px);
+
   gap: 20px;
 }
 .game-container {
+  width: 80vw;
+}
+
+.page-container{
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#scoreboard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {

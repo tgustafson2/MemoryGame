@@ -7,18 +7,21 @@ import "../index.css";
 function Game({ cardAmount = 10 }) {
   const [pokemon, setPokemon] = useState([]);
   const [currScore, setCurrScore] = useState(0);
+  const [rounds, setRounds] = useState(0);
   const [clicked, setClicked] = useState([]);
   const [currMax, setCurrMax] = useState(0);
   let { getPokemon, getPokemonList, shuffle } = usePokemon();
   useEffect(() => {
     getPokemonList(cardAmount).then((result) => {
-      console.log(result);
       setPokemon(result);
     });
-  }, []);
+  }, [rounds]);
   useEffect(() => {
     if (currMax < currScore) {
       setCurrMax(currScore);
+    }
+    if(currScore > 0 && currScore%10===0){
+      setRounds(rounds => rounds+1);
     }
   }, [currScore]);
 
@@ -35,19 +38,20 @@ function Game({ cardAmount = 10 }) {
 
   return (
     <div className="game-container">
-      <Scoreboard currScore={currScore} maxScore={currMax} />
+      
       <div className="card-container">
         {pokemon.map((curr) => {
           return (
             <Card
               pokemonName={curr.name}
               pokemonImageUrl={curr.image}
-              key={curr.id}
+              key={curr.key || curr.id}
               handleClick={guess}
             />
           );
         })}
       </div>
+      <Scoreboard currScore={currScore} maxScore={currMax} />
     </div>
   );
 }

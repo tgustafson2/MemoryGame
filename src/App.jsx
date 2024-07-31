@@ -5,9 +5,10 @@ import "./index.css";
 
 function App() {
   return (
-    <>
-      <Game />
-    </>
+    <div className="page-container">
+      <h1>Pokemon Memory Game</h1>
+        <Game />
+    </div>
   );
 }
 

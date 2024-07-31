@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import  Tilt  from "react-parallax-tilt";
-import cardback from "../../public/card-back.png";
 import "../index.css";
 
 function Card({ pokemonName, pokemonImageUrl, handleClick }) {
@@ -29,7 +28,7 @@ function Card({ pokemonName, pokemonImageUrl, handleClick }) {
         <div
           className="card-back"
         >
-            <img src={cardback} />
+            <img src="/card-back.png" />
         </div>
       </ReactCardFlip>
     </div>
